@@ -3,15 +3,15 @@
  */
 public class GameOfLife {
 
-    private boolean[][] tab=new boolean[30][30];
-    private int x=30;
-    private int y=30;
+    private int x=50;
+    private int y=50;
+    private boolean[][] tab=new boolean[x][y];
     private boolean period=false;
     private boolean started=false;
 
     public GameOfLife(){
         for(int i=0; i<x;i++){
-            for(int j=0;j<30;j++){
+            for(int j=0;j<y;j++){
                 this.tab[i][j]=false;
             }
         }
@@ -42,9 +42,57 @@ public class GameOfLife {
         }
     }
 
+    public void generateOscillator2() {
+        tab[15][15]=true;
+        tab[15][16]=true;
+        tab[15][17]=true;
+    }
+
+    public void generateGliderGun(){
+        tab[5][1]=true;
+        tab[5][2]=true;
+        tab[6][1]=true;
+        tab[6][2]=true;
+        tab[3][13]=true;
+        tab[3][14]=true;
+        tab[4][12]=true;
+        tab[5][11]=true;
+        tab[6][11]=true;
+        tab[7][11]=true;
+        tab[8][12]=true;
+        tab[9][13]=true;
+        tab[9][14]=true;
+        tab[8][16]=true;
+        tab[7][17]=true;
+        tab[6][17]=true;
+        tab[5][17]=true;
+        tab[6][18]=true;
+        tab[4][16]=true;
+        tab[3][21]=true;
+        tab[3][22]=true;
+        tab[4][21]=true;
+        tab[4][22]=true;
+        tab[5][21]=true;
+        tab[5][22]=true;
+        tab[6][23]=true;
+        tab[6][25]=true;
+        tab[7][25]=true;
+        tab[1][25]=true;
+        tab[2][25]=true;
+        tab[3][35]=true;
+        tab[3][36]=true;
+        tab[4][35]=true;
+        tab[4][36]=true;
+        tab[6][15]=true;
+        tab[2][23]=true;
+
+
+
+    }
+
     public void clear(){
         for(int i=0; i<x;i++){
-            for(int j=0;j<30;j++){
+            for(int j=0;j<y;j++){
                 this.tab[i][j]=false;
             }
         }

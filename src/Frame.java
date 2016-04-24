@@ -7,8 +7,8 @@ import java.awt.event.*;
  */
 public class Frame extends JFrame {
 
-    public static final int WIDTH=800;
-    public static final int HEIGHT=800;
+    public static final int WIDTH=900;
+    public static final int HEIGHT=900;
 
     private GameOfLife gameOfLife;
 
@@ -31,7 +31,7 @@ public class Frame extends JFrame {
 
         settingsPanel=new JPanel();
 
-        JButton buttonGlider=new JButton("generuj glider");
+        JButton buttonGlider=new JButton("glider");
         buttonGlider.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -41,7 +41,17 @@ public class Frame extends JFrame {
         });
         settingsPanel.add(buttonGlider);
 
-        JButton buttonConst=new JButton("generuj stałe");
+        JButton buttonGliderGun=new JButton("glider gun");
+        buttonGliderGun.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Frame.this.gameOfLife.generateGliderGun();
+                gameComponent.repaint();
+            }
+        });
+        settingsPanel.add(buttonGliderGun);
+
+        JButton buttonConst=new JButton("stałe");
         buttonConst.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -51,7 +61,7 @@ public class Frame extends JFrame {
         });
         settingsPanel.add(buttonConst);
 
-        JButton buttonOscillator=new JButton("generuj oscylator");
+        JButton buttonOscillator=new JButton("oscylator");
         buttonOscillator.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -60,6 +70,16 @@ public class Frame extends JFrame {
             }
         });
         settingsPanel.add(buttonOscillator);
+
+        JButton buttonOscillator2=new JButton("oscylator-2");
+        buttonOscillator2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Frame.this.gameOfLife.generateOscillator2();
+                gameComponent.repaint();
+            }
+        });
+        settingsPanel.add(buttonOscillator2);
 
         JButton buttonClear=new JButton("wyczyść");
         buttonClear.addActionListener(new ActionListener() {

@@ -7,8 +7,8 @@ import java.awt.event.MouseEvent;
  * Created by apple on 24.04.2016.
  */
 public class GameComponent extends JComponent {
-    private int x=30;
-    private int y=30;
+    private int x=50;
+    private int y=50;
 
 
     private int rectSize;
@@ -17,7 +17,7 @@ public class GameComponent extends JComponent {
 
     public GameComponent(GameOfLife gameOfLife){
 
-        this.rectSize=700/x;
+        this.rectSize=800/x;
         this.gameOfLife=gameOfLife;
         addMouseListener(new EventHandler());
     }
